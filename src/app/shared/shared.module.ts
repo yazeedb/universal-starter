@@ -6,6 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ApiService } from './api.service';
 import { ModelService } from './model/model.service';
 
+import { ScriptsService } from './scripts.service';
+
 const MODULES = [
   // Do NOT include UniversalModule, HttpModule, or JsonpModule here
   CommonModule,
@@ -25,7 +27,7 @@ const COMPONENTS = [
 const PROVIDERS = [
   ModelService,
   ApiService
-]
+];
 
 @NgModule({
   imports: [
@@ -36,7 +38,8 @@ const PROVIDERS = [
     ...COMPONENTS
   ],
   providers: [
-    ...PROVIDERS
+    ...PROVIDERS,
+    ScriptsService
   ],
   exports: [
     ...MODULES,

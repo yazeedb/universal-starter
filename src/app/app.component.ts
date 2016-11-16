@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { ScriptsService } from './shared/scripts.service';
+
 @Component({
   selector: 'app',
   styles: [`
@@ -20,5 +22,11 @@ import { Component } from '@angular/core';
   `
 })
 export class AppComponent {
+  constructor(private scriptsService: ScriptsService) {}
 
+  ngOnInit() {
+    this.scriptsService.updateExternalTag('https://code.jquery.com/jquery-3.1.1.min.js', () => {
+      console.log('we got jQuery');
+    });
+  }
 }
