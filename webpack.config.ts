@@ -36,6 +36,8 @@ export var commonConfig = {
       // TypeScript
       { test: /\.ts$/,   use: ['awesome-typescript-loader', 'angular2-template-loader'] },
       { test: /\.html$/, use: 'raw-loader' },
+      { test: /\.scss$/,  use: ['raw-loader', 'sass-loader'], exclude: /global-styles\.scss$/ },
+      { test: /global-styles\.scss/, use: ['style-loader', 'css-loader', 'sass-loader'] },
       { test: /\.css$/,  use: 'raw-loader' },
       { test: /\.json$/, use: 'json-loader' }
     ],
